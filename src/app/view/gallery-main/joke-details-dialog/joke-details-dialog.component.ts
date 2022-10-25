@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {ViewService} from "../../view.service";
-import {Observable, of} from "rxjs";
+import {Joke} from "../../../shared/models/joke";
 
 @Component({
   selector: 'app-joke-details-dialog',
@@ -11,17 +11,16 @@ import {Observable, of} from "rxjs";
 export class JokeDetailsDialogComponent implements OnInit {
 
   displayedColumns: string[] = ['joke', 'setup', 'delivery'];
-  // dataSource$: Observable<any> = of([]);
-  dataSource$: any;
+  dataSource: any;
 
   constructor(public dialogRef: MatDialogRef<JokeDetailsDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any, private viewService: ViewService) {
+              @Inject(MAT_DIALOG_DATA) public data: Joke, private viewService: ViewService) {
   }
 
 
   ngOnInit(): void {
     this.displayDataByType(this.data.type)
-    this.dataSource$ = this.viewService.getJokesByTypes(this.data.type);
+    this.dataSource = this.viewService.getJokesByTypes(this.data.type);
 
   }
 
