@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.form {
+  text-align: center;
+  max-width: 350px;
+  padding: 45px;
+  background: #f6f4f4;
+  border: 1px solid grey;
+}
+
+h1 {
+  text-align: left;
+  font-weight: bold;
+}
+
+.button_login {
+  width: 100%;
+  color: white;
+  background-color: #5270ae;
+}
+
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+}
+
+
+button:disabled {
+  background-color: grey;
+  color: white !important;
+}
+
+.submit {
+  margin-top: 10px;
+}
